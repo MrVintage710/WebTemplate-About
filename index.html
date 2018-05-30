@@ -7,28 +7,56 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="/css/main.css">
-<link rel="stylesheet" href="/css/theme-revierside.css">
+<link rel="stylesheet" type="text/css" href="/css/theme-riverside.css">
+
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
 
 <body>
 
-    <!-- Nav bar-->
+    <!-- Nav bar -->
     <div class="w3-top">
-        <div class="w3-bar w3-theme-l1 w3-padding">
-            <a href="#home" class="w3-bar-item w3-button w3-theme-l3">Home</a>
+        <div class="w3-bar w3-padding w3-theme" id="navbar" onscroll="">
+            <a href="#home" class="w3-bar-item w3-button">Home</a>
             <a href="#about" class="w3-bar-item w3-button">About</a>
         </div>
     </div>
 
-    <!-- First Parallax Image with Logo Text -->
+    <!-- Cover Parallax Image -->
     <div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
         <div class="w3-display-middle" style="white-space:nowrap;">
-            <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">JORDAN REANIER</span>
+            <span class="w3-center w3-padding-large w3-theme w3-xlarge w3-wide w3-animate-opacity">JORDAN REANIER</span>
         </div>
     </div>
 
-    <div class="w3-container">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, quod magnam officia iure explicabo tempore harum facilis totam sit cum, minus nesciunt, minima pariatur beatae. Ipsum est nulla at quaerat?</p>
+    <div class="w3-container w3-theme-light">
+        <h1 id="about">ABOUT</h1>
+        <p>This is where the about paragraph goes. Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, quod magnam officia iure explicabo tempore harum facilis totam sit cum, minus nesciunt, minima pariatur beatae. 
+            Ipsum est nulla at quaerat? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam deleniti illum aut natus, molestiae officiis culpa unde esse quia delectus blanditiis 
+            quos ab aliquam doloremque at mollitia, voluptate eius aspernatur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto eaque ea aperiam sunt, similique fugiat? 
+            Impedit deleniti reiciendis dicta consequatur dolor aliquam, quod eius saepe voluptates ipsa voluptate, ipsam veritatis? Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+            Esse, distinctio delectus debitis suscipit omnis consequatur blanditiis sit corporis magnam dolorum soluta accusamus fuga illo enim optio minima assumenda aspernatur autem.
+        </p>
+        <h1>PRICING</h1>
+        <p>
+            This is where the pricing bits goes. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae officiis mollitia cumque quaerat in eveniet asperiores quod! Impedit 
+            praesentium at ducimus minima, distinctio, officiis quibusdam vero blanditiis voluptas nesciunt quisquam! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed neque 
+            eligendi molestiae quod eaque fugiat! Inventore, voluptatem! Tempora accusantium omnis necessitatibus nihil natus neque, facilis a corporis! Omnis, veniam labore? Lorem ipsum 
+            dolor sit amet consectetur adipisicing elit. Excepturi sapiente repudiandae, tempora cumque consectetur sit! Accusamus ratione voluptatum provident totam architecto tenetur sunt, 
+            distinctio vitae, voluptas fugit autem veniam doloremque.
+        </p>
     </div>
+
+
+    <!-- Navbar apear and disapear -->
+    <script>
+        const navbar = $('#navbar')
+        var fadeIn = 500
+
+        $(window).bind('scroll', function(){
+            var scroll = $(document).scrollTop()
+            navbar.css('opacity', (scroll/fadeIn))
+        })
+    </script>
 
 </body>
 
