@@ -7,20 +7,11 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="/css/main.css">
-<link rel="stylesheet" type="text/css" href="/css/theme-riverside.css">
+<link rel="stylesheet" href="/css/theme-riverside.css">
 
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
 
 <body>
-
-    <!-- Nav bar -->
-    <div class="w3-top">
-        <div class="w3-bar w3-padding w3-theme" id="navbar" onscroll="">
-            <a href="#home" class="w3-bar-item w3-button">Home</a>
-            <a href="#about" class="w3-bar-item w3-button">About</a>
-        </div>
-    </div>
-
     <!-- Cover Parallax Image -->
     <div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
         <div class="w3-display-middle" style="white-space:nowrap;">
@@ -28,7 +19,15 @@
         </div>
     </div>
 
-    <div class="w3-container w3-theme-light">
+    <!-- Nav bar -->
+    <div class="nav">
+        <div class="w3-bar w3-padding w3-theme" id="navbar" style="opacity: 1;">
+            <a href="#home" class="w3-bar-item w3-button">Home</a>
+            <a href="#about" class="w3-bar-item w3-button">About</a>
+        </div>
+    </div>
+
+    <div class="rel-2 w3-container w3-theme-light">
         <h1 id="about">ABOUT</h1>
         <p>This is where the about paragraph goes. Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, quod magnam officia iure explicabo tempore harum facilis totam sit cum, minus nesciunt, minima pariatur beatae. 
             Ipsum est nulla at quaerat? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam deleniti illum aut natus, molestiae officiis culpa unde esse quia delectus blanditiis 
@@ -36,6 +35,11 @@
             Impedit deleniti reiciendis dicta consequatur dolor aliquam, quod eius saepe voluptates ipsa voluptate, ipsam veritatis? Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
             Esse, distinctio delectus debitis suscipit omnis consequatur blanditiis sit corporis magnam dolorum soluta accusamus fuga illo enim optio minima assumenda aspernatur autem.
         </p>
+    </div>
+
+    <div class="bgimg-2 w3-display-container w3-opacity-min"></div>
+
+    <div class="w3-container w3-theme-light">
         <h1>PRICING</h1>
         <p>
             This is where the pricing bits goes. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae officiis mollitia cumque quaerat in eveniet asperiores quod! Impedit 
@@ -44,17 +48,37 @@
             dolor sit amet consectetur adipisicing elit. Excepturi sapiente repudiandae, tempora cumque consectetur sit! Accusamus ratione voluptatum provident totam architecto tenetur sunt, 
             distinctio vitae, voluptas fugit autem veniam doloremque.
         </p>
+        <h1>CONTACT</h1>
+        <p>
+            This is where the contact bits goes. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae officiis mollitia cumque quaerat in eveniet asperiores quod! Impedit 
+            praesentium at ducimus minima, distinctio, officiis quibusdam vero blanditiis voluptas nesciunt quisquam! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed neque 
+            eligendi molestiae quod eaque fugiat! Inventore, voluptatem! Tempora accusantium omnis necessitatibus nihil natus neque, facilis a corporis! Omnis, veniam labore? Lorem ipsum 
+            dolor sit amet consectetur adipisicing elit. Excepturi sapiente repudiandae, tempora cumque consectetur sit! Accusamus ratione voluptatum provident totam architecto tenetur sunt, 
+            distinctio vitae, voluptas fugit autem veniam doloremque.
+        </p>
     </div>
 
-
-    <!-- Navbar apear and disapear -->
+    <!-- Sticky Navbar Code because {position: sticky} wasn't working -->
     <script>
-        const navbar = $('#navbar')
-        var fadeIn = 500
+        const nav = $('#navbar')
+        const about = $('#about')
+        var pos = $('#home').position().top + $('#home').height()
 
-        $(window).bind('scroll', function(){
-            var scroll = $(document).scrollTop()
-            navbar.css('opacity', (scroll/fadeIn))
+        $(window).scroll(function(){
+            var scroll = $(window).scrollTop()
+            var hasClass = nav.hasClass("w3-top")
+
+            if(scroll >= pos && !hasClass) {
+                nav.addClass("w3-top")
+                about.addClass("about-fix")
+            } else if(scroll < pos && hasClass) {
+                nav.removeClass("w3-top")
+                about.removeClass("about-fix")
+            }
+        })
+
+        $(window).resize(function(){
+            pos = $('#home').position().top + $('#home').height()
         })
     </script>
 
