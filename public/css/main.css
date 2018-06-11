@@ -25,6 +25,7 @@ body, html {
     min-height: 75%;
 }
 
+/* Fixes the about section once the navbar is sticky */
 .about-fix {
-    padding-top: 60px;
+    padding-top: 58px;
 }
