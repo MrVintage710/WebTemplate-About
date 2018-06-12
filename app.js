@@ -19,7 +19,7 @@ app.get("/", (req, res) => {
 
         siteA = !siteA
     } else {
-        res.sendfile(path.join(__dirname + "/index-a.html"))
+        res.sendFile(path.join(__dirname + "/index-a.html"))
     }
 })
 
