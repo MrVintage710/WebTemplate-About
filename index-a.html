@@ -15,8 +15,10 @@
 <link rel="stylesheet" href="/css/main.css">
 <link rel="stylesheet" href="/css/theme-riverside.css">
 
-<!-- Jquery link-->
+<!-- Script Links -->
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+<script src="/js/PDFObject/pdfobject.min.js"></script>
+<script src="/js/jquery.smoothState.min"></script>
 
 <body>
     <!-- Cover Parallax Image -->
@@ -37,7 +39,7 @@
     </div>
 
     <div class="rel-2 w3-container w3-theme-light">
-        <h1 id="about" class="w3-wide">ABOUT</h1>
+        <h1 id="about">ABOUT</h1>
         <p><span class="">I just finished my second year </span>of college at Montana State University studying both English Writing and English literature. 
             Even while I was younger and still learning how to write, I was fascinated and passionate about the art of language and story. 
             That passion never faded, and I spent years of my freetime working to perfect my craft. In the beginning, I was interested in 
@@ -57,10 +59,17 @@
         </p>
     </div>
 
+    <div class="w3-container w3-theme-light" style="padding: 0.01em 0px">
+        <h1>Things I Can Do</h1>
+        <div class="w3-row w3-center w3-theme-dark pdf-row">
+            <h1><a href="#home">Test<a></h1>
+        </div>
+    </div>
+
     <div class="bgimg-2 w3-display-container w3-opacity-min"></div>
 
     <div class="w3-container w3-theme-light">
-        <h1 id="pricing" class="w3-wide">PRICING</h1>
+        <h1 id="pricing">PRICING</h1>
         <p>
             This is where the pricing bits goes. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae officiis mollitia cumque quaerat in eveniet asperiores quod! Impedit 
             praesentium at ducimus minima, distinctio, officiis quibusdam vero blanditiis voluptas nesciunt quisquam! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed neque 
@@ -68,7 +77,7 @@
             dolor sit amet consectetur adipisicing elit. Excepturi sapiente repudiandae, tempora cumque consectetur sit! Accusamus ratione voluptatum provident totam architecto tenetur sunt, 
             distinctio vitae, voluptas fugit autem veniam doloremque.
         </p>
-        <h1 id="contact" class="w3-wide">CONTACT</h1>
+        <h1 id="contact">CONTACT</h1>
         <p>
             This is where the contact bits goes. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae officiis mollitia cumque quaerat in eveniet asperiores quod! Impedit 
             praesentium at ducimus minima, distinctio, officiis quibusdam vero blanditiis voluptas nesciunt quisquam! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed neque 
@@ -77,6 +86,11 @@
             distinctio vitae, voluptas fugit autem veniam doloremque.
         </p>
     </div>
+
+    <!-- Add classes to all of one type -->
+    <script>
+        $('h1').addClass("w3-wide w3-center")
+    </script>
 
     <!-- Sticky Navbar Code because {position: sticky} wasn't working -->
     <script>
@@ -100,6 +114,32 @@
         $(window).resize(function(){
             pos = $('#home').position().top + $('#home').height()
         })
+    </script>
+
+    <!-- Inject PDFS -->
+    <script>
+        PDFObject.embed("/pdf/analytical_essay.pdf", "#pdf_1")
+    </script>
+
+    <!-- smoothstate transitions-->
+    <script>
+        ;(function ($) {
+        'use strict';
+        var content  = $('#main').smoothState({
+                // onStart runs as soon as link has been activated
+                onStart : {   
+                    // Set the duration of our animation
+                    duration: 250,
+                    
+                    // Alterations to the page
+                    render: function () {
+
+                        // Quickly toggles a class and restarts css animations
+                        content.toggleAnimationClass('is-exiting');
+                    }
+                }
+            }).data('smoothState'); // makes public methods available
+        })(jQuery);
     </script>
 </body>
 

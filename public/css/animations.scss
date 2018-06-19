@@ -1,0 +1,21 @@
+.m-scene {
+    /** Basic styles for an animated element */
+    .scene_element {
+      animation-duration: 0.25s;
+      transition-timing-function: ease-in;
+      animation-fill-mode: both;
+  
+    }
+  
+    /** An element that fades in */
+    .scene_element--fadeInExpand {
+      animation-name: fadeInExpand;
+    }
+
+    &.is-exiting {
+        .scene_element {
+          animation-direction: alternate-reverse;
+        }
+    }
+  }
+  

@@ -1,0 +1,10 @@
+@keyframes fadeInExpand {
+    0% {
+        height: 100px;
+    }
+
+    100% {
+        height: 100%;
+    }
+}
+

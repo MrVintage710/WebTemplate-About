@@ -29,3 +29,15 @@ body, html {
 .about-fix {
     padding-top: 58px;
 }
+
+.pdf-row {
+    height: 100px;
+}
+
+.hide {
+    visibility: hidden;
+}
+
+.show {
+    visibility: visible;
+}
