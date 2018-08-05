@@ -14,11 +14,13 @@
 <!-- Style Links -->
 <link rel="stylesheet" href="/css/main.css">
 <link rel="stylesheet" href="/css/theme-riverside.css">
+<link rel="stylesheet" href="/css/keyframes.css">
+<link rel="stylesheet" href="/css/animations.scss">
 
 <!-- Script Links -->
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
 <script src="/js/PDFObject/pdfobject.min.js"></script>
-<script src="/js/jquery.smoothState.min"></script>
+<script src="/js/jquery.smoothState.min.js"></script>
 
 <body>
     <!-- Cover Parallax Image -->
@@ -61,8 +63,14 @@
 
     <div class="w3-container w3-theme-light" style="padding: 0.01em 0px">
         <h1>Things I Can Do</h1>
-        <div class="w3-row w3-center w3-theme-dark pdf-row">
-            <h1><a href="#home">Test<a></h1>
+        <div class="w3-row w3-center w3-theme-d4 pdf-row w3-hover-opacity">
+            <h2 id="text-row-0" onclick="makePDFSelected(0)">Analytical Essay</h2>
+        </div>
+        <div class="w3-row w3-center w3-theme-d4 pdf-row w3-hover-opacity">
+            <h2 id="text-row-1" onclick="makePDFSelected(1)">Test 1</h2>
+        </div>
+        <div class="w3-row w3-center w3-theme-d4 pdf-row w3-hover-opacity">
+            <h2 id="text-row-2" onclick="makePDFSelected(2)">Test 2</h2>
         </div>
     </div>
 
@@ -116,31 +124,38 @@
         })
     </script>
 
-    <!-- Inject PDFS -->
+    <!-- Code for PDF Bars -->
     <script>
-        PDFObject.embed("/pdf/analytical_essay.pdf", "#pdf_1")
-    </script>
+        var pdfs = $(".pdf-row")
+        var selected = null;
+        
+        function makePDFSelected(index) {
+            if(selected != null) {
+                toggleSelection(selected)
+            }
 
-    <!-- smoothstate transitions-->
-    <script>
-        ;(function ($) {
-        'use strict';
-        var content  = $('#main').smoothState({
-                // onStart runs as soon as link has been activated
-                onStart : {   
-                    // Set the duration of our animation
-                    duration: 250,
-                    
-                    // Alterations to the page
-                    render: function () {
+            selected = $(pdfs[index])
+            selected_text = $("#text-row-" + index);
 
-                        // Quickly toggles a class and restarts css animations
-                        content.toggleAnimationClass('is-exiting');
-                    }
+            toggleSelection(selected)
+        }
+
+        function toggleSelection(element) {
+            if(PDFObject.supportsPDFs) {
+                if(element.hasClass("selected")) {
+                    selected.removeClass("selected")
+                    selected.removeClass("w3-theme-d5")
+                    selected.addClass("w3-theme-d4")
+                } else {
+                    selected.addClass("selected")
+                    selected.addClass("w3-theme-d5")
+                    selected.removeClass("w3-theme-d4")
                 }
-            }).data('smoothState'); // makes public methods available
-        })(jQuery);
-    </script>
+            } else {
+                window.location.href = "http://stackoverflow.com";
+            }
+        }
+    </script>>
 </body>
 
 </html>

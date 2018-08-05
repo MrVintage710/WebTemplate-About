@@ -24,7 +24,7 @@ app.get("/", (req, res) => {
     }
 })
 
-app.get("/example/:id", (req, res) => {
+app.get("/examples/:id", (req, res) => {
     var file = fs.readFile(path.join(__dirname + "/pdf_" + req.params.id + ".html"), function (err, data) {
         if (err) {
             res.status(404).send("Cannot find file.")

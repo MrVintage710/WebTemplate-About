@@ -30,8 +30,9 @@ body, html {
     padding-top: 58px;
 }
 
-.pdf-row {
-    height: 100px;
+/* Hover pointer over the pdf banner*/ 
+.pdf-row:hover {
+    cursor: pointer;
 }
 
 .hide {
@@ -40,4 +41,8 @@ body, html {
 
 .show {
     visibility: visible;
+}
+
+.selected {
+    color: aqua;
 }
