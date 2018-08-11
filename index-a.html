@@ -14,9 +14,6 @@
 <!-- Style Links -->
 <link rel="stylesheet" href="/css/main.css">
 <link rel="stylesheet" href="/css/theme-riverside.css">
-<link rel="stylesheet" href="/css/keyframes.css">
-<link rel="stylesheet" href="/css/animations.scss">
-
 <!-- Script Links -->
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
 <script src="/js/PDFObject/pdfobject.min.js"></script>
@@ -40,59 +37,104 @@
         </div>
     </div>
 
+    <!-- Main About Section-->
     <div class="rel-2 w3-container w3-theme-light">
         <h1 id="about">ABOUT</h1>
-        <p><span class="">I just finished my second year </span>of college at Montana State University studying both English Writing and English literature. 
-            Even while I was younger and still learning how to write, I was fascinated and passionate about the art of language and story. 
-            That passion never faded, and I spent years of my freetime working to perfect my craft. In the beginning, I was interested in 
-            creative prose. But as I’ve worked my way through high school, college, and a few writing related jobs so far, I’ve also fallen 
-            in love with business writing, marketing, blogging, essay writing, and much more. 
-        </p>
-        <p>
-            Even though a lot of my time is dedicated to writing, I’ve also been singing for almost eight years. I’ve always liked public 
-            speaking after watching my parents do it my entire life. School has been a pleasure for me- I love to learn. Science, 
-            psychology, sociology, politics, religion, music, art, business, and much more are all topics that I enjoy and have at least 
-            a minimal basis of understanding in order to write more efficiently.
-        </p>
-        <p>
-            One of the most important things to know about me is my profound love for people. Outside of my field, what truly brings me 
-            happiness is loving and supporting friends, family, and even people I don’t know well. I do my best to be friendly and 
-            professional through all modes of communication.
-        </p>
-    </div>
-
-    <div class="w3-container w3-theme-light" style="padding: 0.01em 0px">
-        <h1>Things I Can Do</h1>
-        <div class="w3-row w3-center w3-theme-d4 pdf-row w3-hover-opacity">
-            <h2 id="text-row-0" onclick="makePDFSelected(0)">Analytical Essay</h2>
-        </div>
-        <div class="w3-row w3-center w3-theme-d4 pdf-row w3-hover-opacity">
-            <h2 id="text-row-1" onclick="makePDFSelected(1)">Test 1</h2>
-        </div>
-        <div class="w3-row w3-center w3-theme-d4 pdf-row w3-hover-opacity">
-            <h2 id="text-row-2" onclick="makePDFSelected(2)">Test 2</h2>
+        <div class="body-paragraphs">
+            <p><span class="">I just finished my second year </span>of college at Montana State University studying both English Writing and English literature. 
+                Even while I was younger and still learning how to write, I was fascinated and passionate about the art of language and story. 
+                That passion never faded, and I spent years of my freetime working to perfect my craft. In the beginning, I was interested in 
+                creative prose. But as I’ve worked my way through high school, college, and a few writing related jobs so far, I’ve also fallen 
+                in love with business writing, marketing, blogging, essay writing, and much more. 
+            </p>
+            <p>
+                Even though a lot of my time is dedicated to writing, I’ve also been singing for almost eight years. I’ve always liked public 
+                speaking after watching my parents do it my entire life. School has been a pleasure for me- I love to learn. Science, 
+                psychology, sociology, politics, religion, music, art, business, and much more are all topics that I enjoy and have at least 
+                a minimal basis of understanding in order to write more efficiently.
+            </p>
+            <p>
+                One of the most important things to know about me is my profound love for people. Outside of my field, what truly brings me 
+                happiness is loving and supporting friends, family, and even people I don’t know well. I do my best to be friendly and 
+                professional through all modes of communication.
+            </p>
+            <p style="font-size: 20pt; text-align: center;" class="w3-text-theme"><b><a href="http://localhost:3000/examples/resume">Resume</a></b></p>
         </div>
     </div>
 
+    <!-- PDF Selection Bar -->
+    <div class="w3-container w3-theme-light" style="padding: 0px 0px">
+        <div class="w3-row w3-theme-d4" style="">
+            <h1>Writing Samples</h1>
+        </div>
+        <div id="text-row-0" class="w3-row w3-center w3-theme-d2 pdf-row w3-hover-opacity" data-link="http://localhost:3000/examples/why_do_students_attend_msu" onclick="makePDFSelected(0)">
+            <h5>Why Do Students Attend MSU</h5>
+        </div>
+        <div id="text-row-1" class="w3-row w3-center w3-theme-d2 pdf-row w3-hover-opacity" data-link="http://www.montana.edu/news/17011/shane-cantrell-selected-to-lead-missoula-office-for-msu-s-manufacturing-outreach" onclick="makePDFSelected(1)">
+            <h5>Press Release</h5>
+        </div>
+        <div id="text-row-2" class="w3-row w3-center w3-theme-d2 pdf-row w3-hover-opacity" data-link="http://localhost:3000/examples/creative_nonfiction_example" onclick="makePDFSelected(2)">
+            <h5>Non-fiction</h5>
+        </div>
+        <div id="text-row-3" class="w3-row w3-center w3-theme-d2 pdf-row w3-hover-opacity" data-link="http://localhost:3000/examples/research_essay" onclick="makePDFSelected(3)">
+            <h5>Research Essay</h5>
+        </div>
+        <div id="text-row-4" class="w3-row w3-center w3-theme-d2 pdf-row w3-hover-opacity" data-link="https://mailchi.mp/montana/forward-focus-news-events-for-manufacturers" onclick="makePDFSelected(4)">
+            <h5>Newsletter</h5>
+        </div>
+        <!-- <div id="text-row-5" class="w3-row w3-center w3-theme-d2 pdf-row w3-hover-opacity" data-link="https://www.msuexponent.com/news/exponent-explains-library-research-center/article_0fb20ce0-328f-11e8-bc14-b37646335be9.html" onclick="makePDFSelected(5)">
+            <h5>Library Research Article</h5>
+        </div> -->
+        <div id="text-row-5" class="w3-row w3-center w3-theme-d2 pdf-row w3-hover-opacity" data-link="http://localhost:3000/examples/creative_fiction" onclick="makePDFSelected(5)">
+            <h5>Fiction</h5>
+        </div>
+        <div id="text-row-6" class="w3-row w3-center w3-theme-d2 pdf-row w3-hover-opacity" data-link="http://localhost:3000/examples/analytical_essay" onclick="makePDFSelected(6)">
+            <h5>Analytical Essay</h5>
+        </div>
+        <div id="text-row-7" class="w3-row w3-center w3-theme-d2 pdf-row w3-hover-opacity" data-link="http://localhost:3000/examples/comedy_script" onclick="makePDFSelected(7)">
+            <h5>Comedy Script</h5>
+        </div>
+        <div id="text-row-8" class="w3-row w3-center w3-theme-d2 pdf-row w3-hover-opacity" data-link="http://localhost:3000/examples/literary_analysis" onclick="makePDFSelected(8)">
+            <h5>Literary Analysis</h5>
+        </div>
+        <div id="text-row-9" class="w3-row w3-center w3-theme-d2 pdf-row w3-hover-opacity" data-link="http://roleplayrhetoric.freeforums.net/" onclick="makePDFSelected(9)">
+            <h5>Larger Website Project</h5>
+        </div>
+    </div>
+
+    <!-- Second img -->
     <div class="bgimg-2 w3-display-container w3-opacity-min"></div>
 
+    <!-- The Pricing section -->
     <div class="w3-container w3-theme-light">
         <h1 id="pricing">PRICING</h1>
-        <p>
-            This is where the pricing bits goes. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae officiis mollitia cumque quaerat in eveniet asperiores quod! Impedit 
-            praesentium at ducimus minima, distinctio, officiis quibusdam vero blanditiis voluptas nesciunt quisquam! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed neque 
-            eligendi molestiae quod eaque fugiat! Inventore, voluptatem! Tempora accusantium omnis necessitatibus nihil natus neque, facilis a corporis! Omnis, veniam labore? Lorem ipsum 
-            dolor sit amet consectetur adipisicing elit. Excepturi sapiente repudiandae, tempora cumque consectetur sit! Accusamus ratione voluptatum provident totam architecto tenetur sunt, 
-            distinctio vitae, voluptas fugit autem veniam doloremque.
-        </p>
-        <h1 id="contact">CONTACT</h1>
-        <p>
-            This is where the contact bits goes. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae officiis mollitia cumque quaerat in eveniet asperiores quod! Impedit 
-            praesentium at ducimus minima, distinctio, officiis quibusdam vero blanditiis voluptas nesciunt quisquam! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed neque 
-            eligendi molestiae quod eaque fugiat! Inventore, voluptatem! Tempora accusantium omnis necessitatibus nihil natus neque, facilis a corporis! Omnis, veniam labore? Lorem ipsum 
-            dolor sit amet consectetur adipisicing elit. Excepturi sapiente repudiandae, tempora cumque consectetur sit! Accusamus ratione voluptatum provident totam architecto tenetur sunt, 
-            distinctio vitae, voluptas fugit autem veniam doloremque.
-        </p>
+        <div class="body-paragraphs">
+            <p>Below are my charges per hour.  Prices can be negotiated through contact.</p>
+            <ul>
+                <li>Creative Nonfiction $50/hr</li>
+                <li>Creative Fiction $50/hr</li>
+                <li>Newsletters $45/hr</li>
+                <li>Copyediting $40/hr</li>
+                <li>Proofreading $30/hr</li>
+                <li>Blog Posts $45/hr</li>
+                <li>Social Media Posts $20/hr</li>
+                <li>Reporting $30/hr</li>
+                <li>Articles $35/hr</li>
+                <li>Web content $40/hr</li>
+                <li>Business Letters $30/hr</li>
+                <li>Ghostwriting $55/hr</li>
+                <li>Transcriptions $120/hr</li>
+                <li>Research $40/hr</li>
+                <li>Essay Writing $40/hr</li>
+                <li>Tutoring $15/hr</li>
+                <li>Resumes and Cover Letters $15/hr</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="w3-row">
+        <div class="w3-third w3-container w3-theme-dark">Test Test</div>
+        <div class="w3-twothird bgimg-3 w3-display-container w3-opacity-min"></div>
     </div>
 
     <!-- Add classes to all of one type -->
@@ -135,27 +177,24 @@
             }
 
             selected = $(pdfs[index])
-            selected_text = $("#text-row-" + index);
+            window.location.href = selected.data("link")
+            selected_text = $("#text-row-" + index)
 
             toggleSelection(selected)
         }
 
         function toggleSelection(element) {
-            if(PDFObject.supportsPDFs) {
-                if(element.hasClass("selected")) {
-                    selected.removeClass("selected")
-                    selected.removeClass("w3-theme-d5")
-                    selected.addClass("w3-theme-d4")
-                } else {
-                    selected.addClass("selected")
-                    selected.addClass("w3-theme-d5")
-                    selected.removeClass("w3-theme-d4")
-                }
+            if(element.hasClass("selected")) {
+                selected.removeClass("selected")
+                selected.removeClass("w3-theme-d5")
+                selected.addClass("w3-theme-d4")
             } else {
-                window.location.href = "http://stackoverflow.com";
+                selected.addClass("selected")
+                selected.addClass("w3-theme-d5")
+                selected.removeClass("w3-theme-d4")
             }
         }
-    </script>>
+    </script>
 </body>
 
 </html>
